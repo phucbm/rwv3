@@ -1,6 +1,6 @@
 <template>
+  <h1>Events for good!</h1>
   <div class="events">
-    <h1>Events for good!</h1>
     <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
@@ -10,7 +10,7 @@
 import EventCard from "@/components/EventCard";
 
 export default {
-  name: "HomeView",
+  name: "EventList",
   components: {
     EventCard,
   },
