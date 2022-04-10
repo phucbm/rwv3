@@ -8,6 +8,7 @@
 <script>
 // @ is an alias to /src
 import EventCard from "@/components/EventCard";
+import EventService from "@/services/EventService";
 
 export default {
   name: "EventList",
@@ -16,31 +17,18 @@ export default {
   },
   data() {
     return {
-      events: [
-        {
-          id: 592101,
-          category: "animal welfare",
-          title: "Cat Adoption Day",
-          description: "Find your new feline friend at this event",
-          location: "Meow Town",
-          date: "Jan 28, 2022",
-          time: "12:00",
-          petsAllowed: true,
-          organizer: "Kat Lady",
-        },
-        {
-          id: 592101,
-          category: "festival",
-          title: "Hot Air Balloon Festive",
-          description: "Enjoy the arial view with your beloveds",
-          location: "Constantinople",
-          date: "July 1, 2022",
-          time: "16:00",
-          petsAllowed: false,
-          organizer: "Felix Bui",
-        },
-      ],
+      events: null,
     };
+  },
+  created() {
+    EventService.getEvents()
+      .then((response) => {
+        console.log(response);
+        this.events = response.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
