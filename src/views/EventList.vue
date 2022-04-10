@@ -39,14 +39,4 @@ export default {
   flex-direction: column;
   align-items: center;
 }
-.event-card {
-  border: 1px solid #000;
-  max-width: 400px;
-  width: 90vw;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.event-card:hover {
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
-}
 </style>
